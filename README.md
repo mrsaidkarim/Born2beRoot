@@ -19,3 +19,14 @@ By using LVM, we can expand the storage of any partition (now known as a logical
 ### What is a File System?
 is a method an operating system uses to store, organize, and manage files and directories on a storage device.
 Some common types of file systems: FAT, NTFS, EXT, HFS, APFS.
+
+### What is AppArmor?
+AppArmor provides Mandatory Access Control (MAC) security. In fact, AppArmor allows the system administrator to restrict the actions that processes can perform. For example, if an installed application can take photos by accessing the camera application, but the administrator denies this privilege, the application will not be able to access the camera application. If a vulnerability occurs (some of the restricted tasks are performed), AppArmor blocks the application so that the damage does not spread to the rest of the system.
+In AppArmor, processes are restricted by profiles. Profiles can work in complain-mode and in enforce-mode. In enforce mode, AppArmor prohibits applications from performing restricted tasks. In complain-mode, AppArmor allows applications to do these tasks, but creates a registry entry to display the complaint.
+
+### What is the difference between Apt and Aptitute?
+apt and aptitude are tools for managing software packages on Debian-based systems, aptitude is considered a higher-level tool with additional features, including more advanced dependency resolution and automatic cleanup of unused packages. apt, as the lower-level tool, is more focused on executing explicit commands provided by the user. some of the key differences:
+- Aptitude is a high-level package manager while APT is lower level which can be used by other higher level package managers.
+- Aptitude is smarter and will automatically remove unused packages or suggest installation of dependent packages.
+- Apt will only do explicitly what it is told to do in the command line.
+
