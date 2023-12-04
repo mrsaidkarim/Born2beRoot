@@ -30,3 +30,15 @@ apt and aptitude are tools for managing software packages on Debian-based system
 - Aptitude is smarter and will automatically remove unused packages or suggest installation of dependent packages.
 - Apt will only do explicitly what it is told to do in the command line.
 
+### How to use SSH?
+SSH or Secure Shell is a remote administration protocol that allows users to control and modify their servers over the Internet thanks to an authentication mechanism. Provides a mechanism to authenticate a user remotely, transfer data from the client to the host, and return a response to the request made by the client.
+SSH was created as an alternative to Telnet, which does not encrypt the information that is sent. SSH uses encryption techniques to ensure that all client-to-host and host-to-client communications are done in encrypted form. One of the advantages of SSH is that a user using Linux or MacOS can use SSH on their server to communicate with it remotely through their computer's terminal. Once authenticated, that user will be able to use the terminal to work on the server.
+
+There are three different techniques that SSH uses to encrypt:
+- ***Symmetric encryption***: a method that uses the same secret key for both encryption and decryption of a message, for both the client and the host. Anyone who knows the password can access the message that has been transmitted.
+- ***Asymmetric encryption***: uses two separate keys for encryption and decryption. These are known as the public key and the private key. Together, they form the public-private key pair.
+- ***Hashing***: another form of cryptography used by SSH. Hash functions are made in a way that they don't need to be decrypted. If a client has the correct input, they can create a cryptographic hash and SSH will check if both hashes are the same.
+
+The command used to connect to a server with ssh is:
+
+    ssh {username}@{IP_host} -p {port}
