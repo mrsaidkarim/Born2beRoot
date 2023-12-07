@@ -43,8 +43,24 @@ The command used to connect to a server with ssh is:
 
     ssh {username}@{IP_host} -p {port}
 
-### Corn && Wall:
+### Corn & Wall:
 
 **Cron**: Linux task manager that allows us to execute commands at a certain time. We can automate some tasks just by telling cron what command we want to run at a specific time. For example, if we want to restart our server every day at 4:00 am, instead of having to wake up at that time, cron will do it for us.
 
 **Wall**: command used by the root user to send a message to all users currently connected to the server. If the system administrator wants to alert about a major server change that could cause users to log out, the root user could alert them with wall.
+
+### TCP & UDP:
+
+There are two main protocols for transporting data between devices: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol). Each protocol uses port numbers differently:
+
+*TCP*: Provides reliable, connection-oriented communication. It ensures that data is delivered in the correct order and without errors.
+
+*UDP*: Provides a connectionless, lightweight communication method. It's faster but doesn't guarantee delivery or order.
+
+### Bonus Part:
+
+- User Requests a Page: When a user accesses your WordPress site through their web browser, a request is sent to the VM's IP address.
+- Lighttpd Receives the Request: Lighttpd, being the web server, receives the request. If it's for a static file (like an image or CSS file), lighttpd serves it directly. If it's for a PHP file (like index.php), lighttpd forwards the request to the PHP interpreter.
+- PHP Processes the Request: PHP processes the PHP script, interacting with the MariaDB database as needed. It generates the dynamic content for the requested page.
+- Response Sent to User: The dynamic content is sent back to lighttpd through FastCGI, and then lighttpd sends the final response to the user's web browser.
+- MariaDB Handles Database Operations: If the PHP script involves database operations (e.g., retrieving blog posts), MariaDB manages these operations and provides the necessary data to PHP.
