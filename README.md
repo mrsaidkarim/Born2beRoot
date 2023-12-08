@@ -43,7 +43,7 @@ The command used to connect to a server with ssh is:
 
     ssh {username}@{IP_host} -p {port}
 
-### Corn & Wall:
+### Cron & Wall:
 
 **Cron**: Linux task manager that allows us to execute commands at a certain time. We can automate some tasks just by telling cron what command we want to run at a specific time. For example, if we want to restart our server every day at 4:00 am, instead of having to wake up at that time, cron will do it for us.
 
